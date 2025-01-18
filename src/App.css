@@ -1,0 +1,231 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cddcec;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode {
+  color: white;
+}
+
+/* App Container */
+.app-container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.background-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 800px;
+  max-height: 500px;
+  height: 500px;
+  text-align: center;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .background-box {
+  background: #2b2b2b;
+  color: white;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+.dark-mode header h1 {
+  color: white;
+}
+
+/* Task Input Section */
+.task-input-section {
+  position: sticky;
+  top: 50px;
+  background-color: inherit;
+  z-index: 9;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.task-input {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  background: white;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .task-input {
+  background: #2b2b2b;
+  color: white;
+  border-color: #444;
+}
+
+.add-task-button {
+  padding: 10px 20px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .add-task-button {
+  background-color: #5a52e0;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+  background-color: #5a52e0;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  width: 100%;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #dcdcdc;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .task-list li {
+  border-color: #444;
+}
+
+.task-list li:hover {
+  border-color: #6c63ff;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-text {
+  flex-grow: 1;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .task-text {
+  color: white;
+}
+
+.task-list li.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+/* Buttons */
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-task-button,
+.delete-task-button,
+.save-task-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-task-button {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.delete-task-button {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.save-task-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.dark-mode .edit-task-button,
+.dark-mode .delete-task-button,
+.dark-mode .save-task-button {
+  background-color: #5a52e0;
+}
+
+/* Edit Task Input */
+.edit-task-input {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: width 0.3s ease;
+}
+
+.dark-mode .edit-task-input {
+  background: #2b2b2b;
+  color: white;
+  border-color: #444;
+}
