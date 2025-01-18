@@ -1,3 +1,21 @@
+:root {
+  /* Light Mode Colors */
+  --background-color: #cddcec;
+  --box-background-color: white;
+  --text-color: #333;
+  --input-border-color: #ccc;
+  --button-background-color: #6c63ff;
+  --button-hover-color: #5a52e0;
+  --button-save-color: #28a745;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+  --hover-border-color: #6c63ff;
+
+  /* Dark Mode Colors */
+  --dark-background-color: #2b2b2b;
+  --dark-text-color: white;
+  --dark-input-border-color: #444;
+}
+
 /* General Styles */
 body {
   font-family: "Poppins", sans-serif;
@@ -7,12 +25,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cddcec;
+  background-color: var(--background-color);
   transition: background-color 0.3s ease;
 }
 
 .dark-mode {
-  color: white;
+  color: var(--dark-text-color);
 }
 
 /* App Container */
@@ -24,22 +42,19 @@ body {
 }
 
 .background-box {
-  background: white;
+  background: var(--box-background-color);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 800px;
-  max-height: 500px;
+  box-shadow: 0 4px 15px var(--box-shadow-color);
+  max-width: 800px;
   height: 500px;
-  text-align: center;
   overflow-y: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark-mode .background-box {
-  background: #2b2b2b;
-  color: white;
+  background: var(--dark-background-color);
+  color: var(--dark-text-color);
 }
 
 /* Header */
@@ -53,12 +68,11 @@ header {
 
 header h1 {
   font-size: 24px;
-  color: #4a4a4a;
-  margin: 0;
+  color: var(--text-color);
 }
 
 .dark-mode header h1 {
-  color: white;
+  color: var(--dark-text-color);
 }
 
 /* Task Input Section */
@@ -70,60 +84,42 @@ header h1 {
   padding: 10px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 
 .task-input {
   width: 60%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-color);
   border-radius: 10px;
   font-size: 14px;
-  background: white;
-  color: #333;
+  background: var(--box-background-color);
+  color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark-mode .task-input {
-  background: #2b2b2b;
-  color: white;
-  border-color: #444;
+  background: var(--dark-background-color);
+  color: var(--dark-text-color);
+  border-color: var(--dark-input-border-color);
 }
 
-.add-task-button {
+.add-task-button,
+.dark-mode-toggle {
   padding: 10px 20px;
-  background-color: #6c63ff;
-  color: white;
+  background-color: var(--button-background-color);
+  color: var(--dark-text-color);
   border: none;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
   transition: background-color 0.3s ease;
 }
 
-.dark-mode .add-task-button {
-  background-color: #5a52e0;
-}
-
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-  width: 40px;
-  height: 40px;
-  background-color: #6c63ff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
+.dark-mode .add-task-button,
 .dark-mode .dark-mode-toggle {
-  background-color: #5a52e0;
+  background-color: var(--button-hover-color);
 }
 
 /* Task List */
@@ -139,16 +135,16 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid var(--input-border-color);
   transition: border-color 0.3s ease;
 }
 
 .dark-mode .task-list li {
-  border-color: #444;
+  border-color: var(--dark-input-border-color);
 }
 
 .task-list li:hover {
-  border-color: #6c63ff;
+  border-color: var(--hover-border-color);
 }
 
 .task-content {
@@ -159,12 +155,12 @@ header h1 {
 
 .task-text {
   flex-grow: 1;
-  color: #333;
+  color: var(--text-color);
   transition: color 0.3s ease;
 }
 
 .dark-mode .task-text {
-  color: white;
+  color: var(--dark-text-color);
 }
 
 .task-list li.completed .task-text {
@@ -184,48 +180,41 @@ input[type="checkbox"] {
   gap: 10px;
 }
 
-.edit-task-button,
-.delete-task-button,
-.save-task-button {
+.task-buttons button {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: var(--dark-text-color);
 }
 
-.edit-task-button {
-  background-color: #6c63ff;
-  color: white;
-}
-
+.edit-task-button,
 .delete-task-button {
-  background-color: #6c63ff;
-  color: white;
+  background-color: var(--button-background-color);
 }
 
 .save-task-button {
-  background-color: #28a745;
-  color: white;
+  background-color: var(--button-save-color);
 }
 
 .dark-mode .edit-task-button,
 .dark-mode .delete-task-button,
 .dark-mode .save-task-button {
-  background-color: #5a52e0;
+  background-color: var(--button-hover-color);
 }
 
 /* Edit Task Input */
 .edit-task-input {
   width: 80%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-color);
   border-radius: 5px;
   font-size: 14px;
   transition: width 0.3s ease;
 }
 
 .dark-mode .edit-task-input {
-  background: #2b2b2b;
-  color: white;
-  border-color: #444;
+  background: var(--dark-background-color);
+  color: var(--dark-text-color);
+  border-color: var(--dark-input-border-color);
 }
